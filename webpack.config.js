@@ -44,7 +44,7 @@ module.exports = (env = {}) => {
     },
 
     resolve: {
-      extensions: ['.js', '.jsx'],
+      extensions: ['.ts', '.tsx', '.js', 'json', '.jsx'],
     },
 
     devtool: 'source-map',
@@ -103,6 +103,12 @@ module.exports = (env = {}) => {
         {
           test: /\.less$/i,
           use: [...getStyleLoaders(), 'less-loader'],
+        },
+
+        // TS
+        {
+          test: /\.(tsx|ts)?$/,
+          loader: 'ts-loader',
         },
       ],
     },
