@@ -31,7 +31,7 @@ module.exports = (env = {}) => {
   return {
     mode: isProd ? 'production' : isDev && 'development',
 
-    entry: './src/index.jsx',
+    entry: './src/index.tsx',
 
     output: {
       filename: 'bundle.js',

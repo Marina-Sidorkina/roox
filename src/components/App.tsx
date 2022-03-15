@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 const App = () => <h1 className="header">This is config!</h1>;
 
