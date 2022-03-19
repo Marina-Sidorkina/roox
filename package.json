@@ -16,7 +16,9 @@
   "dependencies": {
     "core-js": "^3.21.1",
     "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2"
   },
   "browserslist": {
     "production": [
@@ -49,7 +51,8 @@
     },
     "rules": {
       "react/prefer-stateless-function": "off",
-      "react/function-component-definition": "off"
+      "react/function-component-definition": "off",
+      "jsx-a11y/label-has-associated-control": "off"
     }
   },
   "devDependencies": {
