@@ -54,7 +54,9 @@
       "react/prefer-stateless-function": "off",
       "react/function-component-definition": "off",
       "jsx-a11y/label-has-associated-control": "off",
-      "import/prefer-default-export": "off"
+      "import/prefer-default-export": "off",
+      "@typescript-eslint/default-param-last":  "off",
+      "no-param-reassign": "off"
     }
   },
   "devDependencies": {
