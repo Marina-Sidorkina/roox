@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useDispatch } from 'react-redux';
 import { changeFilterValue } from '../../redux/actions/filterContainer';
+import Filter from '../../components/Filter';
 import { filterButtonsData } from '../../constants';
 
 const FilterContainer = () => {
@@ -18,9 +19,9 @@ const FilterContainer = () => {
   ));
 
   return (
-    <div className="filter">
+    <Filter>
       {buttons}
-    </div>
+    </Filter>
   );
 };
 
