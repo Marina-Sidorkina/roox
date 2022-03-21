@@ -1,10 +1,27 @@
 import * as React from 'react';
+import { useDispatch } from 'react-redux';
+import { changeFilterValue } from '../../redux/actions/filterContainer';
+import { filterButtonsData } from '../../constants';
 
 const FilterContainer = () => {
-  const buttons = [
-    { name: 'city', label: 'по городу' },
-    { name: 'company', label: 'по компании' },
-  ];
+  const dispatch = useDispatch();
+  const buttonsValues = [...filterButtonsData];
+
+  const buttons = buttonsValues.map(({ name, label }) => (
+    <button
+      type="button"
+      key={name}
+      onClick={() => dispatch(changeFilterValue(name))}
+    >
+      {label}
+    </button>
+  ));
+
+  return (
+    <div className="filter">
+      {buttons}
+    </div>
+  );
 };
 
 export default FilterContainer;
