@@ -11,3 +11,7 @@ export const filterButtonsData = [
 export const FilterActionTypeValue = {
   UPDATE_FILTER_VALUE: 'FILTER_UPDATE_FILTER_VALUE',
 };
+
+export const UsersListActionTypeValue = {
+  UPDATE_USERS_LIST: 'USERS_LIST_UPDATE_USERS_LIST',
+};
