@@ -7,9 +7,9 @@ import API from '../../services/api';
 
 const App = () => {
   const filter = useSelector((state: RootState) => state);
+  const api = new API();
 
   useEffect(() => {
-    const api = new API();
     api.getUsersList()
       .then((response) => console.log(response));
   }, []);
