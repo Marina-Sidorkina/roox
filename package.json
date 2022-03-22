@@ -56,7 +56,8 @@
       "jsx-a11y/label-has-associated-control": "off",
       "import/prefer-default-export": "off",
       "@typescript-eslint/default-param-last":  "off",
-      "no-param-reassign": "off"
+      "no-param-reassign": "off",
+      "no-underscore-dangle": "off"
     }
   },
   "devDependencies": {

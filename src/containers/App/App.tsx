@@ -1,10 +1,19 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import { RootState } from '../../redux/reducers';
 import FilterContainer from '../FilterContainer';
+import API from '../../services/api';
 
 const App = () => {
   const filter = useSelector((state: RootState) => state);
+
+  useEffect(() => {
+    const api = new API();
+    api.getUsersList()
+      .then((response) => console.log(response));
+  }, []);
+
   return (
     <div className="app">
       { filter.filter.value }
