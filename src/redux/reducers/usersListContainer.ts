@@ -14,7 +14,7 @@ interface IUserData {
   website: string;
 }
 
-interface IUsersListUpdateActionType {
+interface ILoadUsersListActionType {
   type: string,
   payload: IUserData[],
 }
@@ -25,10 +25,10 @@ const initialState = {
 
 const usersListReducer = (
   state = initialState,
-  action: IUsersListUpdateActionType,
+  action: ILoadUsersListActionType,
 ) => produce(state, (draft: { users: IUserData[] }) => {
   switch (action.type) {
-    case UsersListActionTypeValue.UPDATE_USERS_LIST:
+    case UsersListActionTypeValue.LOAD_USERS_LIST:
       draft.users = action.payload;
       return draft;
     default:

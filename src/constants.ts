@@ -13,5 +13,5 @@ export const FilterActionTypeValue = {
 };
 
 export const UsersListActionTypeValue = {
-  UPDATE_USERS_LIST: 'USERS_LIST_UPDATE_USERS_LIST',
+  LOAD_USERS_LIST: 'USERS_LIST_LOAD_USERS_LIST',
 };
