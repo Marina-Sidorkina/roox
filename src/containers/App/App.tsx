@@ -1,22 +1,23 @@
 import * as React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { RootState } from '../../redux/reducers';
 import FilterContainer from '../FilterContainer';
-import API from '../../services/api';
+import { loadUsersListAction } from '../../redux/actions/usersListContainer';
 
 const App = () => {
-  const filter = useSelector((state: RootState) => state);
-  const api = new API();
+  const stateValue = useSelector((state: RootState) => state);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    api.getUsersList()
-      .then((response) => console.log(response));
-  }, []);
+    dispatch(loadUsersListAction());
+  }, [stateValue]);
 
   return (
     <div className="app">
-      { filter.filter.value }
+      { stateValue.filter.value }
+      <br />
+      { stateValue.usersList.users.length ? stateValue.usersList.users[0].name : 'Is Loading...' }
       <FilterContainer />
     </div>
   );
