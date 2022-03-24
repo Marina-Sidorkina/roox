@@ -5,6 +5,7 @@ import { RootState } from '../../redux/reducers';
 import { loadUsersListAction } from '../../redux/actions/usersListContainer';
 import { sortByAlphabet } from '../../helpers';
 import Loader from '../../components/Loader';
+import LoadingErrorMessage from '../../components/LoadingErrorMessage';
 
 const UsersListContainer = () => {
   const stateValue = useSelector((state: RootState) => state);
@@ -19,7 +20,7 @@ const UsersListContainer = () => {
   }
 
   if (stateValue.usersList.isError) {
-    return <div>Что-то пошло не так. Попробуйте загрузить страницу позднее...</div>;
+    return <LoadingErrorMessage />;
   }
 
   return (
