@@ -32,6 +32,7 @@ const UsersListContainer = () => {
             <div>{`компания: ${item.company}`}</div>
           </li>
         )) }
+      <Loader />
     </ul>
   );
 };
