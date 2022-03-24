@@ -21,15 +21,29 @@ interface IUsersListUpdateActionType {
 
 const initialState = {
   users: [] as IUserData[],
+  isLoading: false,
+  isError: false,
 };
 
 const usersListReducer = (
   state = initialState,
   action: IUsersListUpdateActionType,
-) => produce(state, (draft: { users: IUserData[] }) => {
+) => produce(state, (draft: { users: IUserData[], isError: boolean, isLoading: boolean, }) => {
   switch (action.type) {
     case UsersListActionTypeValue.UPDATE_USERS_LIST:
       draft.users = action.payload;
+      return draft;
+    case UsersListActionTypeValue.SHOW_USERS_LIST_LOADING:
+      draft.isError = true;
+      return draft;
+    case UsersListActionTypeValue.HIDE_USERS_LIST_LOADING:
+      draft.isError = false;
+      return draft;
+    case UsersListActionTypeValue.SHOW_USERS_LIST_ERROR:
+      draft.isError = true;
+      return draft;
+    case UsersListActionTypeValue.HIDE_USERS_LIST_ERROR:
+      draft.isError = false;
       return draft;
     default:
       return state;
