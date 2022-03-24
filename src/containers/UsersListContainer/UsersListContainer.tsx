@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/reducers';
 import { loadUsersListAction } from '../../redux/actions/usersListContainer';
 import { sortByAlphabet } from '../../helpers';
+import Loader from '../../components/Loader';
 
 const UsersListContainer = () => {
   const stateValue = useSelector((state: RootState) => state);
@@ -14,7 +15,7 @@ const UsersListContainer = () => {
   }, []);
 
   if (stateValue.usersList.isLoading) {
-    return <div>Загрузка...</div>;
+    return <Loader />;
   }
 
   if (stateValue.usersList.isError) {
@@ -23,13 +24,14 @@ const UsersListContainer = () => {
 
   return (
     <ul>
-      { sortByAlphabet(stateValue.usersList.users.slice(), stateValue.filter.value).map((item) => (
-        <li key={item.id}>
-          <div>{`ФИО: ${item.name}`}</div>
-          <div>{`город: ${item.city}`}</div>
-          <div>{`компания: ${item.company}`}</div>
-        </li>
-      )) }
+      { sortByAlphabet(stateValue.usersList.users.slice(), stateValue.filter.value)
+        .map((item) => (
+          <li key={item.id}>
+            <div>{`ФИО: ${item.name}`}</div>
+            <div>{`город: ${item.city}`}</div>
+            <div>{`компания: ${item.company}`}</div>
+          </li>
+        )) }
     </ul>
   );
 };
