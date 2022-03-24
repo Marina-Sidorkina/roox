@@ -11,7 +11,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(loadUsersListAction());
-  }, [stateValue]);
+  }, []);
 
   return (
     <div className="app">
