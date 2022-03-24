@@ -1,10 +1,21 @@
-import { IUserData } from './redux/reducers/usersListContainer';
+interface IData {
+  id: string;
+  name: string;
+  company: string;
+  username: string;
+  email: string;
+  street: string;
+  city: string;
+  zipcode: string;
+  phone: string;
+  website: string;
+}
 
 export const sortByAlphabet = (
-  data: IUserData[],
+  data: IData[],
   field: string,
 ) => {
-  const sortFunction = (a: IUserData, b:IUserData) => {
+  const sortFunction = (a: IData, b:IData) => {
     if (a[field] < b[field]) return -1;
     if (a[field] > b[field]) return 1;
     return 0;

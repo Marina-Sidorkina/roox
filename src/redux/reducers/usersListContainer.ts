@@ -1,7 +1,7 @@
 import produce from 'immer';
 import { UsersListActionTypeValue } from '../../constants';
 
-export interface IUserData {
+interface IUserData {
   id: string;
   name: string;
   company: string;
