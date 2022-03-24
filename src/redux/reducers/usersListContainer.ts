@@ -34,10 +34,10 @@ const usersListReducer = (
       draft.users = action.payload;
       return draft;
     case UsersListActionTypeValue.SHOW_USERS_LIST_LOADING:
-      draft.isError = true;
+      draft.isLoading = true;
       return draft;
     case UsersListActionTypeValue.HIDE_USERS_LIST_LOADING:
-      draft.isError = false;
+      draft.isLoading = false;
       return draft;
     case UsersListActionTypeValue.SHOW_USERS_LIST_ERROR:
       draft.isError = true;

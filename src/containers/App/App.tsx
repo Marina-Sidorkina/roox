@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { RootState } from '../../redux/reducers';
 import FilterContainer from '../FilterContainer';
+import UsersListContainer from '../UsersListContainer';
 import { loadUsersListAction } from '../../redux/actions/usersListContainer';
 
 const App = () => {
@@ -16,9 +17,8 @@ const App = () => {
   return (
     <div className="app">
       { stateValue.filter.value }
-      <br />
-      { stateValue.usersList.users.length ? stateValue.usersList.users[0].name : 'Is Loading...' }
       <FilterContainer />
+      <UsersListContainer />
     </div>
   );
 };
