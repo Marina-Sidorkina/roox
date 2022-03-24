@@ -10,6 +10,9 @@ import LoadingErrorMessage from '../../components/LoadingErrorMessage';
 const UsersListContainer = () => {
   const stateValue = useSelector((state: RootState) => state);
   const dispatch = useDispatch();
+  const users = stateValue.filter.value === 'initial'
+    ? stateValue.usersList.users
+    : sortByAlphabet(stateValue.usersList.users.slice(), stateValue.filter.value);
 
   useEffect(() => {
     dispatch(loadUsersListAction());
@@ -25,14 +28,13 @@ const UsersListContainer = () => {
 
   return (
     <ul>
-      { sortByAlphabet(stateValue.usersList.users.slice(), stateValue.filter.value)
-        .map((item) => (
-          <li key={item.id}>
-            <div>{`ФИО: ${item.name}`}</div>
-            <div>{`город: ${item.city}`}</div>
-            <div>{`компания: ${item.company}`}</div>
-          </li>
-        )) }
+      { users.map((item) => (
+        <li key={item.id}>
+          <div>{`ФИО: ${item.name}`}</div>
+          <div>{`город: ${item.city}`}</div>
+          <div>{`компания: ${item.company}`}</div>
+        </li>
+      )) }
     </ul>
   );
 };

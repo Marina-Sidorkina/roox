@@ -1,5 +1,5 @@
 import produce from 'immer';
-import { FilterValue, FilterActionTypeValue } from '../../constants';
+import { FilterActionTypeValue } from '../../constants';
 
 interface IFilterActionType {
   type: string,
@@ -11,7 +11,7 @@ interface IFilterState {
 }
 
 const initialState = {
-  value: FilterValue.CITY,
+  value: 'initial',
 };
 
 const filterReducer = (
