@@ -8,6 +8,10 @@ html, body, #root {
   height: auto;
 }
 
+html {
+  background-color: #e5e5e5;
+}
+
 body, #root {
   max-width: 665px;
   min-height: 100vh;
