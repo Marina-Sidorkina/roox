@@ -1,13 +1,12 @@
-html, body, #root {
-  box-sizing: border-box;
+.page {
+  display: flex;
   margin: 0 auto;
   padding: 0;
   width: 100%;
   min-width: 320px;
-  height: auto;
-}
-
-body, #root {
   max-width: 665px;
+  height: auto;
   min-height: 100vh;
+  background-color: #ffffff;
+  border: 1px solid black;
 }

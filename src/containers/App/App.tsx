@@ -5,6 +5,8 @@ import { RootState } from '../../redux/reducers';
 import FilterContainer from '../FilterContainer';
 import UsersListContainer from '../UsersListContainer';
 import { loadUsersListAction } from '../../redux/actions/usersListContainer';
+import Sidebar from '../../components/Sidebar';
+import Page from '../../components/Page';
 
 const App = () => {
   const stateValue = useSelector((state: RootState) => state);
@@ -16,9 +18,13 @@ const App = () => {
 
   return (
     <div className="app">
-      { stateValue.filter.value }
-      <FilterContainer />
-      <UsersListContainer />
+      <Page>
+        <Sidebar>
+          { stateValue.filter.value }
+          <FilterContainer />
+        </Sidebar>
+        <UsersListContainer />
+      </Page>
     </div>
   );
 };
