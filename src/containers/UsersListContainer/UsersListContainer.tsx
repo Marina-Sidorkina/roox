@@ -8,6 +8,7 @@ import Loader from '../../components/Loader';
 import LoadingErrorMessage from '../../components/LoadingErrorMessage';
 import UsersList from '../../components/UsersList';
 import UsersListItem from '../../components/UsersListItem';
+import Counter from '../../components/Counter';
 
 const UsersListContainer = () => {
   const stateValue = useSelector((state: RootState) => state);
@@ -26,14 +27,19 @@ const UsersListContainer = () => {
   if (stateValue.usersList.isError) content = <LoadingErrorMessage />;
 
   if (!stateValue.usersList.isLoading && !stateValue.usersList.isError) {
-    content = users.map((item) => (
-      <UsersListItem
-        key={item.id}
-        name={item.name}
-        city={item.city}
-        company={item.company}
-      />
-    ));
+    content = (
+      <>
+        {users.map((item) => (
+          <UsersListItem
+            key={item.id}
+            name={item.name}
+            city={item.city}
+            company={item.company}
+          />
+        ))}
+        <Counter count={users.length} />
+      </>
+    );
   }
 
   return (

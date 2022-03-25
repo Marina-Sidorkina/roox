@@ -23,3 +23,12 @@ export const sortByAlphabet = (
 
   return data.sort(sortFunction);
 };
+
+export const getNounWithEnding = (value: number) => {
+  if (value.toString().endsWith('1')) return 'пользователь';
+  if (
+    value.toString().endsWith('2')
+    || value.toString().endsWith('3')
+    || value.toString().endsWith('4')) return 'пользователя';
+  return 'пользователей';
+};
