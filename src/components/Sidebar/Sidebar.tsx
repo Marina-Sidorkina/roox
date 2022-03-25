@@ -1,14 +1,15 @@
 import * as React from 'react';
+import './Sidebar.scss';
 
-const Filter = (
+const Sidebar = (
   props: { children: React.ReactChild | React.ReactFragment | null | undefined },
 ) => {
   const { children } = props;
   return (
-    <div className="filter">
+    <div className="sidebar">
       {children}
     </div>
   );
 };
 
-export default Filter;
+export default Sidebar;
