@@ -6,6 +6,7 @@ import { loadUsersListAction } from '../../redux/actions/usersListContainer';
 import { sortByAlphabet } from '../../helpers';
 import Loader from '../../components/Loader';
 import LoadingErrorMessage from '../../components/LoadingErrorMessage';
+import UsersList from '../../components/UsersList';
 
 const UsersListContainer = () => {
   const stateValue = useSelector((state: RootState) => state);
@@ -27,7 +28,7 @@ const UsersListContainer = () => {
   }
 
   return (
-    <ul>
+    <UsersList>
       { users.map((item) => (
         <li key={item.id}>
           <div>{`ФИО: ${item.name}`}</div>
@@ -35,7 +36,7 @@ const UsersListContainer = () => {
           <div>{`компания: ${item.company}`}</div>
         </li>
       )) }
-    </ul>
+    </UsersList>
   );
 };
 
