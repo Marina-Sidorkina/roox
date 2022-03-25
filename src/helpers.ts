@@ -25,7 +25,7 @@ export const sortByAlphabet = (
 };
 
 export const getNounWithEnding = (value: number) => {
-  if (value.toString().endsWith('1')) return 'пользователь';
+  if (value.toString().endsWith('1') && !value.toString().endsWith('11')) return 'пользователь';
   if (
     value.toString().endsWith('2')
     || value.toString().endsWith('3')
