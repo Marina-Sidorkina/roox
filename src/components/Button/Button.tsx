@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './Buttton.scss';
 
 interface IFilterButtonProps {
   name: string;
@@ -6,11 +7,12 @@ interface IFilterButtonProps {
   onButtonClick: Function;
 }
 
-const FilterButton = (props: IFilterButtonProps) => {
+const Button = (props: IFilterButtonProps) => {
   const { name, label, onButtonClick } = props;
   return (
     <button
       type="button"
+      className="button"
       key={name}
       onClick={() => onButtonClick()}
     >
@@ -19,4 +21,4 @@ const FilterButton = (props: IFilterButtonProps) => {
   );
 };
 
-export default FilterButton;
+export default Button;

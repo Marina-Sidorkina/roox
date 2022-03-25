@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useDispatch } from 'react-redux';
 import { changeFilterValue } from '../../redux/actions/filterContainer';
 import Filter from '../../components/Filter';
-import FilterButton from '../../components/FilterButton';
+import Button from '../../components/Button';
 import { filterButtonsData } from '../../constants';
 
 const FilterContainer = () => {
@@ -10,7 +10,7 @@ const FilterContainer = () => {
   const buttonsValues = [...filterButtonsData];
 
   const buttons = buttonsValues.map(({ name, label }) => (
-    <FilterButton
+    <Button
       key={name}
       name={name}
       label={label}
