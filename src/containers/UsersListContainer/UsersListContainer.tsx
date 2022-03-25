@@ -7,6 +7,7 @@ import { sortByAlphabet } from '../../helpers';
 import Loader from '../../components/Loader';
 import LoadingErrorMessage from '../../components/LoadingErrorMessage';
 import UsersList from '../../components/UsersList';
+import UsersListItem from '../../components/UsersListItem';
 
 const UsersListContainer = () => {
   const stateValue = useSelector((state: RootState) => state);
@@ -30,11 +31,12 @@ const UsersListContainer = () => {
   return (
     <UsersList>
       { users.map((item) => (
-        <li key={item.id}>
-          <div>{`ФИО: ${item.name}`}</div>
-          <div>{`город: ${item.city}`}</div>
-          <div>{`компания: ${item.company}`}</div>
-        </li>
+        <UsersListItem
+          key={item.id}
+          name={item.name}
+          city={item.city}
+          company={item.company}
+        />
       )) }
     </UsersList>
   );
