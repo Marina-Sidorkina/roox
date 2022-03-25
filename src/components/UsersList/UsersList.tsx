@@ -9,8 +9,9 @@ const UsersList = (
     <div className="users-list">
       <h1 className="users-list__title">Список пользователей</h1>
       <ul className="users-list__items">
-        {children}
+        {children[0]}
       </ul>
+      {children[1]}
     </div>
   );
 };

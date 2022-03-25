@@ -27,19 +27,17 @@ const UsersListContainer = () => {
   if (stateValue.usersList.isError) content = <LoadingErrorMessage />;
 
   if (!stateValue.usersList.isLoading && !stateValue.usersList.isError) {
-    content = (
-      <>
-        {users.map((item) => (
-          <UsersListItem
-            key={item.id}
-            name={item.name}
-            city={item.city}
-            company={item.company}
-          />
-        ))}
-        <Counter count={users.length} />
-      </>
-    );
+    content = [
+      users.map((item) => (
+        <UsersListItem
+          key={item.id}
+          name={item.name}
+          city={item.city}
+          company={item.company}
+        />
+      )),
+      <Counter count={users.length} />,
+    ];
   }
 
   return (
