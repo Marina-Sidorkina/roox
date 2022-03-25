@@ -6,6 +6,7 @@ import UsersListContainer from '../UsersListContainer';
 import { loadUsersListAction } from '../../redux/actions/usersListContainer';
 import Sidebar from '../../components/Sidebar';
 import Page from '../../components/Page';
+import Content from '../../components/Content';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,9 @@ const App = () => {
         <Sidebar>
           <FilterContainer />
         </Sidebar>
-        <UsersListContainer />
+        <Content>
+          <UsersListContainer />
+        </Content>
       </Page>
     </div>
   );
