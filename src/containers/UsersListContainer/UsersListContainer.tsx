@@ -15,29 +15,30 @@ const UsersListContainer = () => {
   const users = stateValue.filter.value === 'initial'
     ? stateValue.usersList.users
     : sortByAlphabet(stateValue.usersList.users.slice(), stateValue.filter.value);
+  let content;
 
   useEffect(() => {
     dispatch(loadUsersListAction());
   }, []);
 
-  if (stateValue.usersList.isLoading) {
-    return <Loader />;
-  }
+  if (stateValue.usersList.isLoading) content = <Loader />;
 
-  if (stateValue.usersList.isError) {
-    return <LoadingErrorMessage />;
+  if (stateValue.usersList.isError) content = <LoadingErrorMessage />;
+
+  if (!stateValue.usersList.isLoading && !stateValue.usersList.isError) {
+    content = users.map((item) => (
+      <UsersListItem
+        key={item.id}
+        name={item.name}
+        city={item.city}
+        company={item.company}
+      />
+    ));
   }
 
   return (
     <UsersList>
-      { users.map((item) => (
-        <UsersListItem
-          key={item.id}
-          name={item.name}
-          city={item.city}
-          company={item.company}
-        />
-      )) }
+      { content }
     </UsersList>
   );
 };
