@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import {
+  HashRouter, Redirect, Route, Switch,
+} from 'react-router-dom';
 import FilterContainer from '../FilterContainer';
 import UsersListContainer from '../UsersListContainer';
 import { loadUsersListAction } from '../../redux/actions/usersListContainer';
@@ -16,16 +19,24 @@ const App = () => {
   }, []);
 
   return (
-    <div className="app">
-      <Page>
-        <Sidebar>
-          <FilterContainer />
-        </Sidebar>
-        <Content>
-          <UsersListContainer />
-        </Content>
-      </Page>
-    </div>
+    <Page>
+      <Sidebar>
+        <FilterContainer />
+      </Sidebar>
+      <Content>
+        <HashRouter>
+          <Switch>
+            <Route path="/users">
+              <UsersListContainer />
+            </Route>
+            <Route path="/profile">
+              <div>Здесь будет профиль пользователя...</div>
+            </Route>
+            <Redirect from="/" to="/users" />
+          </Switch>
+        </HashRouter>
+      </Content>
+    </Page>
   );
 };
 

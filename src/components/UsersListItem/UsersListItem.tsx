@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import './UsersListItem.scss';
 
 const UsersListItem = (props: { name: string, city: string, company: string }) => {
@@ -18,7 +19,7 @@ const UsersListItem = (props: { name: string, city: string, company: string }) =
         <span className="users-list-item__field">компания: </span>
         {company}
       </div>
-      <a href="form" className="users-list-item__link">Подробнее</a>
+      <Link to="/profile" className="users-list-item__link">Подробнее</Link>
     </li>
   );
 };
