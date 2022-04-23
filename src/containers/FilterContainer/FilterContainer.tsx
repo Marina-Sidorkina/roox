@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useDispatch } from 'react-redux';
-import { changeFilterValue } from '../../redux/actions/filterContainer';
+import { changeFilterValue } from '../../redux/actions/filter';
 import Filter from '../../components/Filter';
 import Button from '../../components/Button';
 import { filterButtonsData } from '../../constants';

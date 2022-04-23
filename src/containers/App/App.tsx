@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import FilterContainer from '../FilterContainer';
 import UsersListContainer from '../UsersListContainer';
-import { loadUsersListAction } from '../../redux/actions/usersListContainer';
+import { loadUsersListAction } from '../../redux/actions/usersList';
 import Sidebar from '../../components/Sidebar';
 import Page from '../../components/Page';
 import Content from '../../components/Content';

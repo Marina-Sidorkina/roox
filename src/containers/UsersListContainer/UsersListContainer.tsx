@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/reducers';
-import { loadUsersListAction } from '../../redux/actions/usersListContainer';
+import { loadUsersListAction } from '../../redux/actions/usersList';
 import { sortByAlphabet } from '../../helpers';
 import Loader from '../../components/Loader';
 import LoadingErrorMessage from '../../components/LoadingErrorMessage';
