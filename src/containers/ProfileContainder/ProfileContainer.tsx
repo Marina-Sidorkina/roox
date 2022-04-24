@@ -1,7 +1,11 @@
 import * as React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { RootState } from '../../redux/reducers';
+import Input from '../../components/Input';
+import TextField from '../../components/TextField';
+import { updateFormInput } from '../../redux/actions/profileForm';
+import Form from '../../components/Form';
 
 interface IProfileParams {
   id: string;
@@ -10,43 +14,34 @@ interface IProfileParams {
 const ProfileContainer = () => {
   const stateValue = useSelector((state: RootState) => state);
   const params = useParams() as IProfileParams;
+  const dispatch = useDispatch();
   const info = stateValue.usersList.users.find((user) => user.id.toString() === params.id);
 
-  return (
-    <div className="profile">
-      { info
-        ? (
-          <form className="profile__form">
-            <div className="profile__top">
-              <h1 className="profile__title">Профиль пользователя</h1>
-              <button type="button">Редактировать</button>
-            </div>
-            <fieldset className="profile__fieldset">
-              <label className="profile__label" htmlFor="name">Name</label>
-              <input className="profile__input" type="text" placeholder={info.name} defaultValue={info.name} id="name" name="name" />
-              <label className="profile__label" htmlFor="username">User name</label>
-              <input className="profile__input" type="text" placeholder={info.name} defaultValue={info.name} id="username" name="username" />
-              <label className="profile__label" htmlFor="email">E-mail</label>
-              <input className="profile__input" type="email" placeholder={info.email} defaultValue={info.email} id="email" name="email" />
-              <label className="profile__label" htmlFor="street">Street</label>
-              <input className="profile__input" type="text" placeholder={info.street} defaultValue={info.street} id="street" name="street" />
-              <label className="profile__label" htmlFor="city">City</label>
-              <input className="profile__input" type="text" placeholder={info.city} defaultValue={info.city} id="city" name="city" />
-              <label className="profile__label" htmlFor="zipcode">Zip code</label>
-              <input className="profile__input" type="text" placeholder={info.zipcode} defaultValue={info.zipcode} id="zipcode" name="zipcode" />
-              <label className="profile__label" htmlFor="phone">Phone</label>
-              <input className="profile__input" type="text" placeholder={info.phone} defaultValue={info.phone} id="phone" name="phone" />
-              <label className="profile__label" htmlFor="website">Website</label>
-              <input className="profile__input" type="text" placeholder={info.website} defaultValue={info.website} id="website" name="website" />
-              <label className="profile__label" htmlFor="comment">Comment</label>
-              <textarea className="profile__textarea" id="comment" name="comment" />
-            </fieldset>
-            <button type="submit">Отправить</button>
-          </form>
-        )
-        : 'Пользователь не выбран...' }
-    </div>
-  );
+  const onSubmit = (evt) => {
+    evt.preventDefault();
+    console.log(stateValue.form.values);
+  };
+
+  const onInputChange = (evt, id: string) => {
+    dispatch(updateFormInput(evt.target.value, id));
+  };
+
+  if (info) {
+    return (
+      <Form onSubmit={onSubmit} onEditButtonClick={() => {}}>
+        <Input id="name" type="text" defaultValue={info.name} text="Name" onInputChange={(evt) => onInputChange(evt, 'name')} />
+        <Input id="username" type="text" defaultValue={info.name} text="User name" onInputChange={(evt) => onInputChange(evt, 'username')} />
+        <Input id="email" type="email" defaultValue={info.email} text="E-mail" onInputChange={(evt) => onInputChange(evt, 'email')} />
+        <Input id="street" type="text" defaultValue={info.street} text="Street" onInputChange={(evt) => onInputChange(evt, 'street')} />
+        <Input id="city" type="text" defaultValue={info.city} text="City" onInputChange={(evt) => onInputChange(evt, 'city')} />
+        <Input id="zipcode" type="text" defaultValue={info.zipcode} text="Zip code" onInputChange={(evt) => onInputChange(evt, 'zipcode')} />
+        <Input id="phone" type="tel" defaultValue={info.phone} text="Phone" onInputChange={(evt) => onInputChange(evt, 'phone')} />
+        <Input id="website" type="text" defaultValue={info.website} text="Website" onInputChange={(evt) => onInputChange(evt, 'website')} />
+        <TextField id="comment" text="Comment" onFieldChange={(evt) => onInputChange(evt, 'comment')} />
+      </Form>
+    );
+  }
+  return <div className="profile-error">Пользователь не выбран...</div>;
 };
 
 export default ProfileContainer;
