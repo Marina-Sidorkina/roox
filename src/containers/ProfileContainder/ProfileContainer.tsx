@@ -53,7 +53,7 @@ const ProfileContainer = () => {
         <Input
           id="name"
           type="text"
-          defaultValue={info.name}
+          value={stateValue.form.values.name}
           text="Name"
           readonly={stateValue.form.readonly}
           onInputChange={(evt) => onInputChange(evt, 'name')}
@@ -61,7 +61,7 @@ const ProfileContainer = () => {
         <Input
           id="username"
           type="text"
-          defaultValue={info.name}
+          value={stateValue.form.values.name}
           text="User name"
           readonly={stateValue.form.readonly}
           onInputChange={(evt) => onInputChange(evt, 'userName')}
@@ -69,7 +69,7 @@ const ProfileContainer = () => {
         <Input
           id="email"
           type="email"
-          defaultValue={info.email}
+          value={stateValue.form.values.email}
           text="E-mail"
           readonly={stateValue.form.readonly}
           onInputChange={(evt) => onInputChange(evt, 'email')}
@@ -77,7 +77,7 @@ const ProfileContainer = () => {
         <Input
           id="street"
           type="text"
-          defaultValue={info.street}
+          value={stateValue.form.values.street}
           text="Street"
           readonly={stateValue.form.readonly}
           onInputChange={(evt) => onInputChange(evt, 'street')}
@@ -85,7 +85,7 @@ const ProfileContainer = () => {
         <Input
           id="city"
           type="text"
-          defaultValue={info.city}
+          value={stateValue.form.values.city}
           text="City"
           readonly={stateValue.form.readonly}
           onInputChange={(evt) => onInputChange(evt, 'city')}
@@ -93,7 +93,7 @@ const ProfileContainer = () => {
         <Input
           id="zipcode"
           type="text"
-          defaultValue={info.zipcode}
+          value={stateValue.form.values.zipcode}
           text="Zip code"
           readonly={stateValue.form.readonly}
           onInputChange={(evt) => onInputChange(evt, 'zipcode')}
@@ -101,7 +101,7 @@ const ProfileContainer = () => {
         <Input
           id="phone"
           type="tel"
-          defaultValue={info.phone}
+          value={stateValue.form.values.phone}
           text="Phone"
           readonly={stateValue.form.readonly}
           onInputChange={(evt) => onInputChange(evt, 'phone')}
@@ -109,7 +109,7 @@ const ProfileContainer = () => {
         <Input
           id="website"
           type="text"
-          defaultValue={info.website}
+          value={stateValue.form.values.website}
           text="Website"
           readonly={stateValue.form.readonly}
           onInputChange={(evt) => onInputChange(evt, 'website')}

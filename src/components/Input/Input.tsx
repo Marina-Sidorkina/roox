@@ -4,7 +4,7 @@ import './Input.scss';
 interface IInputProps {
   id: string;
   type: string;
-  defaultValue: string;
+  value: string;
   text: string;
   onInputChange: Function;
   readonly: boolean;
@@ -12,7 +12,7 @@ interface IInputProps {
 
 const Input = (props: IInputProps) => {
   const {
-    id, type, defaultValue, text, onInputChange, readonly,
+    id, type, value, text, onInputChange, readonly,
   } = props;
   return (
     <>
@@ -20,8 +20,8 @@ const Input = (props: IInputProps) => {
       <input
         className="input"
         type={type}
-        placeholder={defaultValue}
-        defaultValue={defaultValue}
+        placeholder={value}
+        value={value}
         id={id}
         name={id}
         onChange={(evt) => onInputChange(evt, id)}
