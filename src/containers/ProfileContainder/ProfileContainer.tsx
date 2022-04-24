@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import { RootState } from '../../redux/reducers';
 import Input from '../../components/Input';
 import TextField from '../../components/TextField';
-import { updateFormInput } from '../../redux/actions/profileForm';
+import { updateForm, updateFormInput } from '../../redux/actions/profileForm';
 import Form from '../../components/Form';
 
 interface IProfileParams {
@@ -16,6 +17,22 @@ const ProfileContainer = () => {
   const params = useParams() as IProfileParams;
   const dispatch = useDispatch();
   const info = stateValue.usersList.users.find((user) => user.id.toString() === params.id);
+
+  useEffect(() => {
+    if (info) {
+      dispatch(updateForm({
+        name: info.name,
+        userName: info.name,
+        email: info.email,
+        street: info.street,
+        city: info.city,
+        zipcode: info.zipcode,
+        phone: info.phone,
+        website: info.website,
+        comment: '',
+      }));
+    }
+  }, [stateValue.usersList.users]);
 
   const onSubmit = (evt) => {
     evt.preventDefault();
