@@ -1,0 +1,19 @@
+.submit {
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+  padding: 5.02px 15px;
+  margin: 0;
+  background-color: #4b51ef;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
