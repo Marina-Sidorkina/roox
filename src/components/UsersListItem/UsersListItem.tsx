@@ -2,8 +2,10 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './UsersListItem.scss';
 
-const UsersListItem = (props: { name: string, city: string, company: string }) => {
-  const { name, city, company } = props;
+const UsersListItem = (props: { name: string, city: string, company: string, id: string }) => {
+  const {
+    name, city, company, id,
+  } = props;
 
   return (
     <li className="users-list-item">
@@ -19,7 +21,12 @@ const UsersListItem = (props: { name: string, city: string, company: string }) =
         <span className="users-list-item__field">компания: </span>
         {company}
       </div>
-      <Link to="/profile" className="users-list-item__link">Подробнее</Link>
+      <Link
+        to={`/profile/${id}`}
+        className="users-list-item__link"
+      >
+        Подробнее
+      </Link>
     </li>
   );
 };

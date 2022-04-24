@@ -10,6 +10,7 @@ import { loadUsersListAction } from '../../redux/actions/usersList';
 import Sidebar from '../../components/Sidebar';
 import Page from '../../components/Page';
 import Content from '../../components/Content';
+import ProfileContainer from '../ProfileContainder';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -29,8 +30,8 @@ const App = () => {
             <Route path="/users">
               <UsersListContainer />
             </Route>
-            <Route path="/profile">
-              <div>Здесь будет профиль пользователя...</div>
+            <Route path="/profile/:id">
+              <ProfileContainer />
             </Route>
             <Redirect from="/" to="/users" />
           </Switch>

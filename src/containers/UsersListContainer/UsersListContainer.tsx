@@ -33,6 +33,7 @@ const UsersListContainer = () => {
         name={item.name}
         city={item.city}
         company={item.company}
+        id={item.id}
       />
     ));
   }
