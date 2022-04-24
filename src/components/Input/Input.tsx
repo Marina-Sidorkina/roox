@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './Input.scss';
 
-interface IFilterButtonProps {
+interface IInputProps {
   id: string;
   type: string;
   defaultValue: string;
@@ -9,7 +9,7 @@ interface IFilterButtonProps {
   onInputChange: Function;
 }
 
-const Input = (props: IFilterButtonProps) => {
+const Input = (props: IInputProps) => {
   const {
     id, type, defaultValue, text, onInputChange,
   } = props;
