@@ -20,3 +20,11 @@ export const updateFormInput = (input: string, id: string) => ({
   input,
   id,
 });
+
+export const unblockForm = () => ({
+  type: ProfileFormActionTypeValue.UNBLOCK_FORM,
+});
+
+export const blockForm = () => ({
+  type: ProfileFormActionTypeValue.BLOCK_FORM,
+});

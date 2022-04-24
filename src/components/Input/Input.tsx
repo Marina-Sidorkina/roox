@@ -7,11 +7,12 @@ interface IInputProps {
   defaultValue: string;
   text: string;
   onInputChange: Function;
+  readonly: boolean;
 }
 
 const Input = (props: IInputProps) => {
   const {
-    id, type, defaultValue, text, onInputChange,
+    id, type, defaultValue, text, onInputChange, readonly,
   } = props;
   return (
     <>
@@ -24,6 +25,7 @@ const Input = (props: IInputProps) => {
         id={id}
         name={id}
         onChange={(evt) => onInputChange(evt, id)}
+        readOnly={readonly}
       />
     </>
   );

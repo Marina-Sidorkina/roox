@@ -32,18 +32,25 @@ const initialState = {
     website: '',
     comment: '',
   },
+  readonly: true,
 };
 
 const profileFormReducer = (
   state = initialState,
   action: IProfileFormActionType,
-) => produce(state, (draft: { values: IProfileFormStateValues }) => {
+) => produce(state, (draft: { values: IProfileFormStateValues, readonly: boolean }) => {
   switch (action.type) {
     case ProfileFormActionTypeValue.UPDATE_FORM:
       draft.values = action.values;
       return draft;
     case ProfileFormActionTypeValue.UPDATE_FORM_INPUT:
       draft.values[action.id] = action.input;
+      return draft;
+    case ProfileFormActionTypeValue.UNBLOCK_FORM:
+      draft.readonly = false;
+      return draft;
+    case ProfileFormActionTypeValue.BLOCK_FORM:
+      draft.readonly = true;
       return draft;
     default:
       return state;

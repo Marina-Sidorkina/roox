@@ -5,11 +5,12 @@ interface IFieldProps {
   id: string;
   text: string;
   onFieldChange: Function;
+  readonly: boolean;
 }
 
 const TextField = (props: IFieldProps) => {
   const {
-    id, text, onFieldChange,
+    id, text, onFieldChange, readonly,
   } = props;
   return (
     <>
@@ -18,6 +19,7 @@ const TextField = (props: IFieldProps) => {
         className="text-field"
         id={id}
         name={id}
+        readOnly={readonly}
         onChange={(evt) => onFieldChange(evt, id)}
       />
     </>
