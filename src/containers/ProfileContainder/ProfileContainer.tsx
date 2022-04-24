@@ -43,9 +43,13 @@ const ProfileContainer = () => {
     dispatch(updateFormInput(evt.target.value, id));
   };
 
+  const unblockFormFields = () => {
+    dispatch(unblockForm());
+  };
+
   if (info) {
     return (
-      <Form onSubmit={onSubmit} onEditButtonClick={() => dispatch(unblockForm())}>
+      <Form onSubmit={onSubmit} onEditButtonClick={unblockFormFields}>
         <Input
           id="name"
           type="text"
