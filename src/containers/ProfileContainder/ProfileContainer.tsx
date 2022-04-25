@@ -22,7 +22,7 @@ const ProfileContainer = () => {
     if (info) {
       dispatch(updateForm({
         name: info.name,
-        userName: info.name,
+        userName: info.username,
         email: info.email,
         street: info.street,
         city: info.city,
@@ -65,7 +65,7 @@ const ProfileContainer = () => {
         <Input
           id="username"
           type="text"
-          value={stateValue.form.values.name}
+          value={stateValue.form.values.userName}
           text="User name"
           readonly={stateValue.form.readonly}
           onInputChange={(evt) => onInputChange(evt, 'userName')}
