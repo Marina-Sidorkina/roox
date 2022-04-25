@@ -5,7 +5,9 @@ import { useEffect } from 'react';
 import { RootState } from '../../redux/reducers';
 import Input from '../../components/Input';
 import TextField from '../../components/TextField';
-import { unblockForm, updateForm, updateFormInput } from '../../redux/actions/profileForm';
+import {
+  blockForm, unblockForm, updateForm, updateFormInput,
+} from '../../redux/actions/profileForm';
 import Form from '../../components/Form';
 import ProfileErrorMessage from '../../components/ProfileErrorMessage';
 
@@ -33,6 +35,7 @@ const ProfileContainer = () => {
         comment: '',
       }));
     }
+    dispatch(blockForm());
   }, [stateValue.usersList.users]);
 
   const onSubmit = (evt) => {

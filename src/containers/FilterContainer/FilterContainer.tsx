@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { changeFilterValue } from '../../redux/actions/filter';
 import Filter from '../../components/Filter';
 import Button from '../../components/Button';
@@ -10,12 +11,13 @@ const FilterContainer = () => {
   const buttonsValues = [...filterButtonsData];
 
   const buttons = buttonsValues.map(({ name, label }) => (
-    <Button
-      key={name}
-      name={name}
-      label={label}
-      onButtonClick={() => dispatch(changeFilterValue(name))}
-    />
+    <Link to="/users" key={name}>
+      <Button
+        name={name}
+        label={label}
+        onButtonClick={() => dispatch(changeFilterValue(name))}
+      />
+    </Link>
   ));
 
   return (

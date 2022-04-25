@@ -21,11 +21,11 @@ const App = () => {
 
   return (
     <Page>
-      <Sidebar>
-        <FilterContainer />
-      </Sidebar>
-      <Content>
-        <HashRouter>
+      <HashRouter>
+        <Sidebar>
+          <FilterContainer />
+        </Sidebar>
+        <Content>
           <Switch>
             <Route path="/users">
               <UsersListContainer />
@@ -35,8 +35,8 @@ const App = () => {
             </Route>
             <Redirect from="/" to="/users" />
           </Switch>
-        </HashRouter>
-      </Content>
+        </Content>
+      </HashRouter>
     </Page>
   );
 };
