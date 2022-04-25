@@ -37,7 +37,7 @@ const ProfileContainer = () => {
 
   const onSubmit = (evt) => {
     evt.preventDefault();
-    console.log(stateValue.form.values);
+    console.log(JSON.stringify(stateValue.form.values));
   };
 
   const onInputChange = (evt, id: string) => {
