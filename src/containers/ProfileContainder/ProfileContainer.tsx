@@ -60,6 +60,7 @@ const ProfileContainer = () => {
           value={stateValue.form.values.name}
           text="Name"
           readonly={stateValue.form.readonly}
+          required
           onInputChange={(evt) => onInputChange(evt, 'name')}
         />
         <Input
@@ -68,6 +69,7 @@ const ProfileContainer = () => {
           value={stateValue.form.values.userName}
           text="User name"
           readonly={stateValue.form.readonly}
+          required
           onInputChange={(evt) => onInputChange(evt, 'userName')}
         />
         <Input
@@ -76,6 +78,7 @@ const ProfileContainer = () => {
           value={stateValue.form.values.email}
           text="E-mail"
           readonly={stateValue.form.readonly}
+          required
           onInputChange={(evt) => onInputChange(evt, 'email')}
         />
         <Input
@@ -84,6 +87,7 @@ const ProfileContainer = () => {
           value={stateValue.form.values.street}
           text="Street"
           readonly={stateValue.form.readonly}
+          required
           onInputChange={(evt) => onInputChange(evt, 'street')}
         />
         <Input
@@ -92,6 +96,7 @@ const ProfileContainer = () => {
           value={stateValue.form.values.city}
           text="City"
           readonly={stateValue.form.readonly}
+          required
           onInputChange={(evt) => onInputChange(evt, 'city')}
         />
         <Input
@@ -100,6 +105,7 @@ const ProfileContainer = () => {
           value={stateValue.form.values.zipcode}
           text="Zip code"
           readonly={stateValue.form.readonly}
+          required
           onInputChange={(evt) => onInputChange(evt, 'zipcode')}
         />
         <Input
@@ -108,6 +114,7 @@ const ProfileContainer = () => {
           value={stateValue.form.values.phone}
           text="Phone"
           readonly={stateValue.form.readonly}
+          required
           onInputChange={(evt) => onInputChange(evt, 'phone')}
         />
         <Input
@@ -116,6 +123,7 @@ const ProfileContainer = () => {
           value={stateValue.form.values.website}
           text="Website"
           readonly={stateValue.form.readonly}
+          required
           onInputChange={(evt) => onInputChange(evt, 'website')}
         />
         <TextField

@@ -27,5 +27,10 @@
     &.active {
       color: #000000;
     }
+
+    &:invalid {
+      border: 1px solid #d91313;
+      outline: none;
+    }
   }
 }

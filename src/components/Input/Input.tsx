@@ -8,11 +8,12 @@ interface IInputProps {
   text: string;
   onInputChange: Function;
   readonly: boolean;
+  required: boolean;
 }
 
 const Input = (props: IInputProps) => {
   const {
-    id, type, value, text, onInputChange, readonly,
+    id, type, value, text, onInputChange, readonly, required,
   } = props;
   return (
     <div className="input">
@@ -26,6 +27,7 @@ const Input = (props: IInputProps) => {
         name={id}
         onChange={(evt) => onInputChange(evt, id)}
         readOnly={readonly}
+        required={required}
       />
     </div>
   );
