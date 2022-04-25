@@ -49,7 +49,11 @@ const ProfileContainer = () => {
 
   if (info) {
     return (
-      <Form onSubmit={onSubmit} onEditButtonClick={unblockFormFields}>
+      <Form
+        onSubmit={onSubmit}
+        onEditButtonClick={unblockFormFields}
+        readonly={stateValue.form.readonly}
+      >
         <Input
           id="name"
           type="text"

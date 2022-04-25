@@ -15,10 +15,10 @@ const Input = (props: IInputProps) => {
     id, type, value, text, onInputChange, readonly,
   } = props;
   return (
-    <>
-      <label className="label" htmlFor={id}>{text}</label>
+    <div className="input">
+      <label className="input__label" htmlFor={id}>{text}</label>
       <input
-        className="input"
+        className={`input__field ${readonly ? '' : 'active'}`}
         type={type}
         placeholder={value}
         value={value}
@@ -27,7 +27,7 @@ const Input = (props: IInputProps) => {
         onChange={(evt) => onInputChange(evt, id)}
         readOnly={readonly}
       />
-    </>
+    </div>
   );
 };
 

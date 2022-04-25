@@ -4,10 +4,14 @@
   color: #ffffff;
   padding: 5.02px 11.5px;
   margin: 0;
-  background-color: #4b51ef;
+  background: #afafaf;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
+  &.active {
+    background: #52cf4f;
+  }
 
   &:hover {
     opacity: 0.9;

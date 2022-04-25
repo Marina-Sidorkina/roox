@@ -9,9 +9,12 @@ const Form = (
     children: React.ReactChild | React.ReactFragment | null | undefined,
     onSubmit: FormEventHandler<HTMLFormElement>,
     onEditButtonClick: Function,
+    readonly: boolean,
   },
 ) => {
-  const { children, onSubmit, onEditButtonClick } = props;
+  const {
+    children, onSubmit, onEditButtonClick, readonly,
+  } = props;
   return (
     <form className="form" onSubmit={(evt) => onSubmit(evt)}>
       <div className="form__top">
@@ -28,6 +31,7 @@ const Form = (
       <Submit
         name="submit"
         label="Отправить"
+        readonly={readonly}
       />
     </form>
   );
