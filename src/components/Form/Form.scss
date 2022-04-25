@@ -1,3 +1,38 @@
 .form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 438px;
 
+  &__top {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 438px;
+    margin: 0 0 11px 0;
+  }
+
+  &__title {
+    margin: 0 0 0 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+  }
+
+  &__fieldset {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 438px;
+    padding: 20px 6px 19px 12px;
+    margin: 0 0 10px 0;
+    border: 1px solid #F3F3F3;
+    border-radius: 8px;
+  }
+
+  .button {
+    padding: 6.5px 14px 6.5px 14px;
+  }
 }
