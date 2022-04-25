@@ -1,3 +1,22 @@
-.text-field {
+.text {
+  display: flex;
+  flex-direction: column;
 
+  &__label {
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 9px;
+    color: #000000;
+    margin: 0 0 3px 0;
+  }
+
+  &__field {
+    box-sizing: border-box;
+    width: 420px;
+    height: 55px;
+    padding-left: 10px;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    resize: none;
+  }
 }

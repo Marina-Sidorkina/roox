@@ -13,16 +13,16 @@ const TextField = (props: IFieldProps) => {
     id, text, onFieldChange, readonly,
   } = props;
   return (
-    <>
-      <label className="label" htmlFor={id}>{text}</label>
+    <div className="text">
+      <label className="text__label" htmlFor={id}>{text}</label>
       <textarea
-        className="text-field"
+        className="text__field"
         id={id}
         name={id}
         readOnly={readonly}
         onChange={(evt) => onFieldChange(evt, id)}
       />
-    </>
+    </div>
   );
 };
 

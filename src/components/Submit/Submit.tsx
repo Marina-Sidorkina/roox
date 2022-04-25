@@ -14,6 +14,7 @@ const Submit = (props: IFilterButtonProps) => {
       type="submit"
       className={`submit ${readonly ? '' : 'active'}`}
       key={name}
+      disabled={readonly}
     >
       {label}
     </button>
