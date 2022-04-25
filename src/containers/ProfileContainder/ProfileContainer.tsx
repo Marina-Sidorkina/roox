@@ -7,6 +7,7 @@ import Input from '../../components/Input';
 import TextField from '../../components/TextField';
 import { unblockForm, updateForm, updateFormInput } from '../../redux/actions/profileForm';
 import Form from '../../components/Form';
+import ProfileErrorMessage from '../../components/ProfileErrorMessage';
 
 interface IProfileParams {
   id: string;
@@ -135,7 +136,7 @@ const ProfileContainer = () => {
       </Form>
     );
   }
-  return <div className="profile-error">Пользователь не выбран...</div>;
+  return <ProfileErrorMessage />;
 };
 
 export default ProfileContainer;
