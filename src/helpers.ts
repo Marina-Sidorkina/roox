@@ -32,3 +32,15 @@ export const getNounWithEnding = (value: number) => {
     || value.toString().endsWith('4')) return 'пользователя';
   return 'пользователей';
 };
+
+export const setFormFieldsValues = (info) => ({
+  name: info.name,
+  userName: info.username,
+  email: info.email,
+  street: info.street,
+  city: info.city,
+  zipcode: info.zipcode,
+  phone: info.phone,
+  website: info.website,
+  comment: '',
+});

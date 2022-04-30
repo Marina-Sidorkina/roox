@@ -1,8 +1,3 @@
-export const FilterValue = {
-  CITY: 'city',
-  COMPANY: 'company',
-};
-
 export const filterButtonsData = [
   { name: 'city', label: 'по городу' },
   { name: 'company', label: 'по компании' },
@@ -25,4 +20,60 @@ export const ProfileFormActionTypeValue = {
   UPDATE_FORM_INPUT: 'PROFILE_FORM_UPDATE_FORM_INPUT',
   UNBLOCK_FORM: 'PROFILE_FORM_UNBLOCK_FORM',
   BLOCK_FORM: 'PROFILE_FORM_BLOCK_FORM',
+};
+
+export const ProfileFormFieldsSetting = {
+  name: {
+    id: 'name',
+    text: 'Name',
+    stateValue: 'name',
+    type: 'text',
+  },
+  username: {
+    id: 'username',
+    text: 'User name',
+    stateValue: 'userName',
+    type: 'text',
+  },
+  email: {
+    id: 'email',
+    text: 'E-mail',
+    stateValue: 'email',
+    type: 'email',
+  },
+  street: {
+    id: 'street',
+    text: 'Street',
+    stateValue: 'street',
+    type: 'text',
+  },
+  city: {
+    id: 'city',
+    text: 'City',
+    stateValue: 'city',
+    type: 'text',
+  },
+  zipcode: {
+    id: 'zipcode',
+    text: 'Zip code',
+    stateValue: 'zipcode',
+    type: 'text',
+  },
+  phone: {
+    id: 'phone',
+    text: 'Phone',
+    stateValue: 'phone',
+    type: 'tel',
+  },
+  website: {
+    id: 'website',
+    text: 'Website',
+    stateValue: 'website',
+    type: 'text',
+  },
+  comment: {
+    id: 'comment',
+    text: 'Comment',
+    stateValue: 'comment',
+  },
 };

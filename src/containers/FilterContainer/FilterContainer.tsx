@@ -10,12 +10,16 @@ const FilterContainer = () => {
   const dispatch = useDispatch();
   const buttonsValues = [...filterButtonsData];
 
+  const onFilterChange = (name) => {
+    dispatch(changeFilterValue(name));
+  };
+
   const buttons = buttonsValues.map(({ name, label }) => (
     <Link to="/users" key={name}>
       <Button
         name={name}
         label={label}
-        onButtonClick={() => dispatch(changeFilterValue(name))}
+        onButtonClick={() => onFilterChange(name)}
       />
     </Link>
   ));

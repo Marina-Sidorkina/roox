@@ -10,6 +10,9 @@ import {
 } from '../../redux/actions/profileForm';
 import Form from '../../components/Form';
 import ProfileErrorMessage from '../../components/ProfileErrorMessage';
+import { setFormFieldsValues } from '../../helpers';
+import { ProfileFormFieldsSetting } from '../../constants';
+import { loadUsersListAction } from '../../redux/actions/usersList';
 
 interface IProfileParams {
   id: string;
@@ -23,19 +26,13 @@ const ProfileContainer = () => {
 
   useEffect(() => {
     if (info) {
-      dispatch(updateForm({
-        name: info.name,
-        userName: info.username,
-        email: info.email,
-        street: info.street,
-        city: info.city,
-        zipcode: info.zipcode,
-        phone: info.phone,
-        website: info.website,
-        comment: '',
-      }));
+      dispatch(updateForm(setFormFieldsValues(info)));
     }
     dispatch(blockForm());
+
+    if (!stateValue.usersList.users.length) {
+      dispatch(loadUsersListAction());
+    }
   }, [stateValue.usersList.users]);
 
   const onSubmit = (evt) => {
@@ -47,7 +44,7 @@ const ProfileContainer = () => {
     dispatch(updateFormInput(evt.target.value, id));
   };
 
-  const unblockFormFields = () => {
+  const onFormFieldsUnblock = () => {
     dispatch(unblockForm());
   };
 
@@ -55,86 +52,86 @@ const ProfileContainer = () => {
     return (
       <Form
         onSubmit={onSubmit}
-        onEditButtonClick={unblockFormFields}
+        onEditButtonClick={onFormFieldsUnblock}
         readonly={stateValue.form.readonly}
       >
         <Input
-          id="name"
-          type="text"
+          id={ProfileFormFieldsSetting.name.id}
+          type={ProfileFormFieldsSetting.name.type}
           value={stateValue.form.values.name}
-          text="Name"
+          text={ProfileFormFieldsSetting.name.text}
           readonly={stateValue.form.readonly}
           required
-          onInputChange={(evt) => onInputChange(evt, 'name')}
+          onInputChange={(evt) => onInputChange(evt, ProfileFormFieldsSetting.name.stateValue)}
         />
         <Input
-          id="username"
-          type="text"
+          id={ProfileFormFieldsSetting.username.id}
+          type={ProfileFormFieldsSetting.username.type}
           value={stateValue.form.values.userName}
-          text="User name"
+          text={ProfileFormFieldsSetting.username.text}
           readonly={stateValue.form.readonly}
           required
-          onInputChange={(evt) => onInputChange(evt, 'userName')}
+          onInputChange={(evt) => onInputChange(evt, ProfileFormFieldsSetting.username.stateValue)}
         />
         <Input
-          id="email"
-          type="email"
+          id={ProfileFormFieldsSetting.email.id}
+          type={ProfileFormFieldsSetting.email.type}
           value={stateValue.form.values.email}
-          text="E-mail"
+          text={ProfileFormFieldsSetting.email.text}
           readonly={stateValue.form.readonly}
           required
-          onInputChange={(evt) => onInputChange(evt, 'email')}
+          onInputChange={(evt) => onInputChange(evt, ProfileFormFieldsSetting.email.stateValue)}
         />
         <Input
-          id="street"
-          type="text"
+          id={ProfileFormFieldsSetting.street.id}
+          type={ProfileFormFieldsSetting.street.type}
           value={stateValue.form.values.street}
-          text="Street"
+          text={ProfileFormFieldsSetting.street.text}
           readonly={stateValue.form.readonly}
           required
-          onInputChange={(evt) => onInputChange(evt, 'street')}
+          onInputChange={(evt) => onInputChange(evt, ProfileFormFieldsSetting.street.stateValue)}
         />
         <Input
-          id="city"
-          type="text"
+          id={ProfileFormFieldsSetting.city.id}
+          type={ProfileFormFieldsSetting.city.type}
           value={stateValue.form.values.city}
-          text="City"
+          text={ProfileFormFieldsSetting.city.text}
           readonly={stateValue.form.readonly}
           required
-          onInputChange={(evt) => onInputChange(evt, 'city')}
+          onInputChange={(evt) => onInputChange(evt, ProfileFormFieldsSetting.city.stateValue)}
         />
         <Input
-          id="zipcode"
-          type="text"
+          id={ProfileFormFieldsSetting.zipcode.id}
+          type={ProfileFormFieldsSetting.zipcode.type}
           value={stateValue.form.values.zipcode}
-          text="Zip code"
+          text={ProfileFormFieldsSetting.zipcode.text}
           readonly={stateValue.form.readonly}
           required
-          onInputChange={(evt) => onInputChange(evt, 'zipcode')}
+          onInputChange={(evt) => onInputChange(evt, ProfileFormFieldsSetting.zipcode.stateValue)}
         />
         <Input
-          id="phone"
-          type="tel"
+          id={ProfileFormFieldsSetting.phone.id}
+          type={ProfileFormFieldsSetting.phone.type}
           value={stateValue.form.values.phone}
-          text="Phone"
+          text={ProfileFormFieldsSetting.phone.text}
           readonly={stateValue.form.readonly}
           required
-          onInputChange={(evt) => onInputChange(evt, 'phone')}
+          onInputChange={(evt) => onInputChange(evt, ProfileFormFieldsSetting.phone.stateValue)}
         />
         <Input
-          id="website"
-          type="text"
+          id={ProfileFormFieldsSetting.website.id}
+          type={ProfileFormFieldsSetting.website.type}
           value={stateValue.form.values.website}
-          text="Website"
+          text={ProfileFormFieldsSetting.website.text}
           readonly={stateValue.form.readonly}
           required
-          onInputChange={(evt) => onInputChange(evt, 'website')}
+          onInputChange={(evt) => onInputChange(evt, ProfileFormFieldsSetting.website.stateValue)}
         />
         <TextField
-          id="comment"
-          text="Comment"
+          id={ProfileFormFieldsSetting.comment.id}
+          text={ProfileFormFieldsSetting.comment.text}
           readonly={stateValue.form.readonly}
-          onFieldChange={(evt) => onInputChange(evt, 'comment')}
+          onFieldChange={(evt) => onInputChange(evt, ProfileFormFieldsSetting.comment.stateValue)}
         />
       </Form>
     );
