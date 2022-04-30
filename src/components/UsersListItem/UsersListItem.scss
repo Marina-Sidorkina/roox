@@ -1,19 +1,19 @@
 .users-list-item {
-  box-sizing: border-box;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 11px;
-  font-weight: 400;
-  line-height: 13px;
-  color: #000000;
+  box-sizing: border-box;
   width: 420px;
   height: 77px;
+  margin: 0 0 20px;
+  padding: 10px;
+  color: #000;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
   background: #f3f3f3;
   border-radius: 8px;
-  margin: 0 0 20px 0;
-  padding: 10px;
 
   &:last-of-type {
     margin-bottom: 10px;
@@ -25,11 +25,11 @@
 
   &__link {
     position: absolute;
-    bottom: 10px;
     right: 10px;
+    bottom: 10px;
+    color: #4b51ef;
     font-size: 12px;
     line-height: 14px;
-    color: #4b51ef;
     text-decoration: none;
 
     &:hover {

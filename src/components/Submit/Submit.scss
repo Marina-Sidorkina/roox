@@ -1,9 +1,9 @@
 .submit {
+  margin: 0;
+  padding: 5.02px 11.5px;
+  color: #fff;
   font-size: 12px;
   line-height: 14px;
-  color: #ffffff;
-  padding: 5.02px 11.5px;
-  margin: 0;
   background: #afafaf;
   border: none;
   border-radius: 5px;
@@ -25,9 +25,9 @@
     &.active,
     &:hover,
     &:active {
-      opacity: 1;
       background: #afafaf;
       cursor: default;
+      opacity: 1;
     }
   }
 }

@@ -1,7 +1,8 @@
 module.exports = {
-  extends: ["stylelint-config-standard", "stylelint-config-rational-order", "stylelint-prettier/recommended"],
+  extends: ["stylelint-config-standard-scss", "stylelint-config-rational-order", "stylelint-prettier/recommended"],
   plugins: ["stylelint-order", "stylelint-scss", "stylelint-less"],
   rules: {
-    // Дополнительные правила
+    "alpha-value-notation": "number",
+    "color-function-notation": "legacy"
   }
 };

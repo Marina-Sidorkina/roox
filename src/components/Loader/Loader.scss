@@ -1,6 +1,6 @@
 @keyframes pulse {
   from {
-    transform: scale(.50);
+    transform: scale(0.5);
   }
 
   50% {
@@ -8,14 +8,14 @@
   }
 
   to {
-    transform: scale(.50);
+    transform: scale(0.5);
   }
 }
 
 .loader {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   width: 80px;
   height: 60px;
 
@@ -24,7 +24,7 @@
     height: 60px;
     background-color: #bdbdbd;
     border-radius: 5px;
-    transform: scale(0.50);
+    transform: scale(0.5);
     animation: pulse 900ms ease-in-out infinite;
   }
 
