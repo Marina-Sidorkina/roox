@@ -3,5 +3,5 @@
 
 **Запуск приложения**: npm i && npm run start
 
-**Деплой**: https://roox-test.web.app
+**Сайт**: https://roox-test.web.app
 
